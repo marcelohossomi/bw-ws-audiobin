@@ -1,0 +1,40 @@
+.stream {
+    background: var(--gray-1);
+    margin: var(--spacing-medium);
+    border-radius: var(--spacing-small);
+}
+.stream.enabled .stream-header {
+    background: var(--ok);
+}
+.stream.disabled .stream-header {
+    background: var(--nok);
+}
+.stream-header {
+    display: flex;
+    border-top-left-radius: var(--spacing-small);
+    border-top-right-radius: var(--spacing-small);
+}
+.stream-header :not(:first-child) {
+    margin-left: auto
+}
+.stream-header h3 {
+    font-size: 10pt;
+    font-weight: normal;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin: 0;
+}
+.stream-header input {
+    height: 100%;
+    margin: auto var(--spacing-small);
+    /* border-radius: 50%; */
+    font-size: 8pt;
+}
+
+.stream-tracks {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-medium);
+}
+.stream-tracks :not(:first-child) {
+    margin-top: var(--spacing-medium);
+}

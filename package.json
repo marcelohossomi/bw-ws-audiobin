@@ -1,0 +1,15 @@
+{
+  "name": "bw-ws-audiobin",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@3.2.2",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start:server": "yarn workspace server start",
+    "start:client": "yarn workspace client start",
+    "build": "yarn workspace client build"
+  }
+}
