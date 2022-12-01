@@ -7,6 +7,12 @@ Visualize Bandwidth Programmable Voice media streaming calls.
 - Node 16+
 - Yarn 3+
 
+## Usage
+
+Use [`<StartStream>`](https://dev.bandwidth.com/docs/voice/bxml/startStream) in your Bandwidth BXML and point `destination` to `ws://{host}/audio`, where `{host}` is where this application is running. When streams are started, they will show up in the UI.
+
+This application also serves BXML at `http://{host}/bxml/{file}`, responding with the file at server/bxml/{file}.xml. It uses [Handlebars](https://handlebarsjs.com/) templating, so environment variables can be accessed with `{{ env.MY_VAR }}`.
+
 ## Run
 
 ```shell
@@ -26,15 +32,15 @@ yarn start:server
 # Access it in the browser, use the port shown in the logs
 ```
 
-## Local
+## Development
+
+The client has hot-reloading, so it might be useful to run the client standalone for development.
+
+If your server is not running locally, set the `REACT_APP_SERVER_HOST` environment variable so the client can connect to it.
 
 ```shell
-# Set server host for client web socket
-# Since create-react-app is static, can't use the server's environment variables
-export REACT_APP_SERVER_HOST=<host where this is running>:<port>
-
 # Run server and client with watches
-# Changes to files will reload automatically
+# Changes to client files will reload automatically
 yarn start:client
 yarn start:server
 ```
