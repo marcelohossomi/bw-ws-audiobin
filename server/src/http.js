@@ -22,7 +22,7 @@ app.use('/bxml/*', (req, res) => {
   }
 })
 
-app.use('/callback/**', (req, res) => {
+app.use('/**', (req, res) => {
   logEvent(req, 'green')
   res.sendStatus(200)
 })
@@ -34,7 +34,8 @@ function logEvent(req, color) {
   const event = req.body
   const attributes = {
     'Event Type': event.eventType,
-    'Call': `${event.accountId}/${event.callId}`
+    'Call': `${event.accountId}/${event.callId}`,
+    'Host': event.callUrl.substring(event.callUrl.indexOf('//') + 2, event.callUrl.indexOf('/accounts'))
   }
   if (event.cause) {
     attributes['Cause'] = event.cause === 'hangup'
