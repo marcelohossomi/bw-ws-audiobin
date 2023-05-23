@@ -1,0 +1,10 @@
+<Bxml>
+    <StartTranscription
+        name="Transcription 1"
+        tracks="both"
+        destination="{{env.WS_URL}}/audio"
+        transcriptionEventUrl="/callback/transcription-1"/>
+
+    <SpeakSentence>Are we really transcribing a text-to-speech? Wow. Incredible. And humans say AIs are stupid.</SpeakSentence>
+    <Pause duration="5" />
+</Bxml>

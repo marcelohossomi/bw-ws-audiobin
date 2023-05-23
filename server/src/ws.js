@@ -38,44 +38,20 @@ wss.on('connection', (ws, request) => {
         case '/audio': {
             createHandler(ws, {
                 start(event) {
-                    const stream = {
-                        callId: event.metadata.callId,
-                        name: event.metadata.streamName,
-                        params: event.streamParams,
-                        tracks: event.metadata.tracks.map((track) => ({
-                            name: track.name,
-                            samples: Buffer.alloc(0)
-                        })),
-                        ws
-                    }
-                    state.streams = [...state.streams, stream]
-                    if (!state.timer) {
-                        state.timer = setInterval(broadcast, 100)
-                    }
-                    return stream
+                    broadcast(event)
                 },
 
-                stop() {
-                    // Do nothing
+                stop(event) {
+                    broadcast(event)
                 },
 
                 media(event, stream) {
-                    const track = stream.tracks.find(t => t.name === event.track)
-                    if (track) {
-                        track.samples = Buffer.concat([
-                            track.samples,
-                            Buffer.from(event.payload, 'base64')
-                        ])
-                    }
+                    // Do nothing
+                },
+
+                transcription(event, stream) {
+                    broadcast(event)
                 }
-            }).then(({ state: stream }) => {
-                state.streams = state.streams.filter(s => s !== stream)
-                if (state.streams.length === 0 && state.timer) {
-                    clearInterval(state.timer)
-                    broadcast()
-                    delete state.timer
-                }
-                stream.tracks.forEach((track) => writeWav(`${stream.name}-${track.name}`, track.samples))
             })
             break
         }
@@ -102,16 +78,8 @@ function createHandler(ws, handlers, initialState = {}) {
     })
 }
 
-function broadcast() {
-    const data = JSON.stringify(state.streams.map(stream => ({
-        callId: stream.callId,
-        name: stream.name,
-        params: stream.params,
-        tracks: stream.tracks.map((track) => ({
-            name: track.name,
-            samples: track.samples.subarray(-5000).toString('base64')
-        }))
-    })))
+function broadcast(event) {
+    const data = JSON.stringify(event)
     state.clients.forEach(ws => ws.send(data))
 }
 

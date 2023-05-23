@@ -1,0 +1,54 @@
+:root {
+  --gray-0: #202020;
+  --gray-1: #404040;
+  --gray-2: #606060;
+  --gray-3: #808080;
+  --gray-4: #A0A0A0;
+  --gray-5: #C0C0C0;
+  --gray-6: #E0E0E0;
+  --header-normal: #000080;
+  --header-light: #404080;
+  --header-dark: #000040;
+  --ok: #008000;
+  --nok: #800000;
+  --spacing-small: 0.25rem;
+  --spacing-medium: 0.5rem;
+  --spacing-large: 1.0rem;
+}
+
+body {
+  background: black;
+  color: var(--gray-6);
+}
+
+.app {
+  background: var(--gray-0);
+  width: 30rem;
+  height: 100vh;
+  /* margin: auto; */
+}
+.app h1 {
+  margin: 0;
+}
+.app h2 {
+  background: var(--header-light);
+  padding: var(--spacing-small) var(--spacing-medium);
+  margin: 0;
+  font-size: 14pt;
+  font-weight: normal;
+}
+.app p {
+  margin: var(--spacing-medium);
+  margin-bottom: var(--spacing-large);
+}
+
+.top-bar {
+  display: flex;
+  vertical-align: bottom;
+  background: var(--header-normal);
+  padding: var(--spacing-small) var(--spacing-medium);
+  margin: 0;
+}
+.top-bar :not(:first-child) {
+  margin-left: auto;
+}

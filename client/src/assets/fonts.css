@@ -1,13 +1,15 @@
 /* font - brand font */
 @import url('https://fonts.googleapis.com/css?family=Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
-
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 /* font - icons */
 @font-face {
   font-family: 'Bandwidth-v2';
   src: url(./Bandwidth.eot);
   src: url(./Bandwidth.woff2) format('woff2'),
     url(./Bandwidth.woff) format('woff'),
-    url(./Bandwidth.ttf) format('truetype'), url(./Bandwidth.svg) format('svg');
+    url(./Bandwidth.ttf) format('truetype'),
+    url(./Bandwidth.svg) format('svg'),
+    url(./SpecialElite.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -2,6 +2,7 @@
     <StartTranscription
         name="Transcription 1"
         tracks="both"
+        destination="{{env.WS_URL}}/audio"
         transcriptionEventUrl="/callback/transcription-1"/>
 
     <SpeakSentence>The quick brown fox jumped over the lazy dog</SpeakSentence>
