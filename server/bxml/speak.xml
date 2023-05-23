@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
-<Response>
-    <SpeakSentence>Thank you for calling. Bye!</SpeakSentence>
-</Response>
+<Bxml>
+    <SpeakSentence>Hello world! This is a call. A call that is calling you.</SpeakSentence>
+    <Pause duration="1"/>
+</Bxml>

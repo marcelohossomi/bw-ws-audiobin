@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Response>
+    <Transfer callTimeout="5" tag="transfer-initiated"
+        transferCompleteUrl="https://mhossomi.ngrok.io/bxml/speak">
+        <PhoneNumber
+            transferDisconnectUrl="https://mhossomi.ngrok.io/callbacks">
+            +12082749593
+        </PhoneNumber>
+    </Transfer>
+</Response>

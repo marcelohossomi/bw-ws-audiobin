@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Response>
+    <SpeakSentence>Conferenciating you</SpeakSentence>
+    <Conference conferenceEventUrl="/conference">my-conference</Conference>
+</Response>

@@ -1,0 +1,9 @@
+<Bxml>
+    <StartTranscription
+        name="Transcription 1"
+        tracks="both"
+        transcriptionEventUrl="/callback/transcription-1"/>
+
+    <SpeakSentence>The quick brown fox jumped over the lazy dog</SpeakSentence>
+    <Pause duration="1" />
+</Bxml>

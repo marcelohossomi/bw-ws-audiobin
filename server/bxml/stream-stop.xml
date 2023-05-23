@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <Response>
     <StartStream 
-        name="Test 1" tracks="both" destination="{{env.WS_URL}}/audio"
+        name="Media 1" tracks="both" destination="{{env.WS_URL}}/audio"
         streamEventUrl="/callback/stream-1"/>
     <StartStream 
-        name="Test 2" tracks="both" destination="{{env.WS_URL}}/audio"
+        name="Media 2" tracks="both" destination="{{env.WS_URL}}/audio"
         streamEventUrl="/callback/stream-2"/>
     <SpeakSentence>Hello! This call is being streamed.</SpeakSentence>
-    <Pause duration="10"/>
-    <StopStream name="Test 1"/>
+    <Pause duration="3"/>
+    <StopStream name="Media 1"/>
     <SpeakSentence>Time is up, no more streaming for you. Bye!</SpeakSentence>
 </Response>
