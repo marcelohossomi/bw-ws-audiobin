@@ -1,4 +1,7 @@
 <Bxml>
+    <StartRecording recordingAvailableUrl="/recordingAvailable"/>
+    <Tag>Another tag</Tag>
     <SpeakSentence>Hello world! This is a call. A call that is calling you.</SpeakSentence>
+    <Tag>A third tag</Tag>
     <Pause duration="1"/>
 </Bxml>
