@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
 <Response>
     <StartStream 
-        name="Test" tracks="inbound"
-        streamEventUrl="/callback/stream"/>
+        name="Test" tracks="both"
+        streamEventUrl="/callback/stream"
+        destination="{{env.WS_URL}}/audio"/>
     <SpeakSentence>The quick brown fox jumped over the lazy dog</SpeakSentence>
     <Pause duration="1"/>
     <StopStream name="Test"/>
